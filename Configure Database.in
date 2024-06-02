@@ -1,0 +1,19 @@
+-- Create the database if it does not exist
+CREATE DATABASE IF NOT EXISTS school_employee_management;
+
+-- Use the newly created database
+USE school_employee_management;
+
+-- Create the employees table without the department column and with job_title as VARCHAR
+CREATE TABLE IF NOT EXISTS employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    hire_date DATE NOT NULL,
+    job_title VARCHAR(100) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone_number VARCHAR(20) UNIQUE NOT NULL
+);
